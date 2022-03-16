@@ -1,2 +1,2 @@
 # DiscreteMathHomeworks-2term
-Solutions to discrete math home tasks (second term, SPbU)
+Solutions to discrete math home tasks (the second term, SPbU)
