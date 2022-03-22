@@ -218,6 +218,8 @@ namespace LZWArchiver
                 count++;
             }
 
+            if (bitNumber > 1) compressedBytes.Add(sum);
+
             List<byte> header = new List<byte>();
             header.Add((byte)(count & 255));
             header.Add((byte)((count >> 8) & 255));
