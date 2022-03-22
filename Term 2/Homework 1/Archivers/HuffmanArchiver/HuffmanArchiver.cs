@@ -2,7 +2,7 @@
 
 namespace HuffmanArchiver
 {
-    internal class HuffmanArchiver
+    public class HuffmanArchiver
     {
         public void CompressFile(string dataFileName, string archiveName)
         {
@@ -56,7 +56,7 @@ namespace HuffmanArchiver
 
                     if (current.Bit0 != null) continue;
 
-                    if (added++ <= dataLength) decompressedBytes.Add(current.Symbol);
+                    if (added++ < dataLength) decompressedBytes.Add(current.Symbol);
 
                     current = root;
                 }
