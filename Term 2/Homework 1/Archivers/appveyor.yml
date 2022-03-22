@@ -4,7 +4,7 @@ before_build:
 - nuget restore Archivers.sln
 
 build:
-project: Archivers.sln.sln
+project: Archivers.sln
 
 test_script:
-- dotnet test Archivers.sln.sln
+- dotnet test Archivers.sln
