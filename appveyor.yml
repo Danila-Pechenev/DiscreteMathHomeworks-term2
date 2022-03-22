@@ -4,7 +4,7 @@ before_build:
 - nuget restore Term 2/Homework 1/Archivers/Archivers.sln
 
 build:
-project: Term 2/Homework 1/Archivers/Archivers.sln
+- project: Term 2/Homework 1/Archivers/Archivers.sln
 
 test_script:
 - dotnet test Term 2/Homework 1/Archivers/Archivers.sln
