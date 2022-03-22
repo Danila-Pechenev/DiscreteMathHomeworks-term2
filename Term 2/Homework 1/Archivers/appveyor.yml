@@ -7,4 +7,5 @@ build:
 project: Archivers.sln
 
 test_script:
+- dotnet restore Archivers.sln
 - dotnet test Archivers.sln
