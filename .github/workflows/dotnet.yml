@@ -25,3 +25,6 @@ jobs:
       
     - name: Build the Solution
       run: msbuild "Term 2/Homework 1/Archivers/Archivers.sln"
+      
+    - name: Testing
+      run: dotnet test "Term 2/Homework 1/Archivers/Archivers.sln"
