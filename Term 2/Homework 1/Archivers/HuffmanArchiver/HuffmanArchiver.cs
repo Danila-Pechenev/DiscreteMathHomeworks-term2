@@ -4,6 +4,11 @@ namespace HuffmanArchiver
 {
     public class HuffmanArchiver
     {
+        /// <summary>
+        /// Compresses the file using the Huffman method.
+        /// </summary>
+        /// <param name="dataFileName">Path to the input file.</param>
+        /// <param name="archiveName">Path to the output file (archive).</param>
         public void CompressFile(string dataFileName, string archiveName)
         {
             byte[] fileData = File.ReadAllBytes(dataFileName);
@@ -11,6 +16,12 @@ namespace HuffmanArchiver
             File.WriteAllBytes(archiveName, archiveData);
         }
 
+        /// <summary>
+        /// Decompresses the archive obtained using the Huffman method.
+        /// </summary>
+        /// <param name="archiveName">Path to the input file (archive).</param>
+        /// <param name="dataFileName">Path to the output file.</param>
+        /// <param name="text"></param>
         public void DecompressFile(string archiveName, string dataFileName, bool text = true)
         {
             byte[] archiveData = File.ReadAllBytes(archiveName);
@@ -60,7 +71,6 @@ namespace HuffmanArchiver
 
                     current = root;
                 }
-
             }
 
             return decompressedBytes.ToArray();
@@ -125,9 +135,7 @@ namespace HuffmanArchiver
                         sum = 0;
                         bitNumber = 1;
                     }
-
                 }
-
             }
 
             if (bitNumber > 1) compressedBytes.Add(sum);

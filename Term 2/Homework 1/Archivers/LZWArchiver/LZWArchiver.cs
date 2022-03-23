@@ -18,6 +18,11 @@ namespace LZWArchiver
             }
         }
 
+        /// <summary>
+        /// Compresses the file using the LZW algorithm.
+        /// </summary>
+        /// <param name="dataFileName">Path to the input file.</param>
+        /// <param name="archiveName">Path to the output file (archive).</param>
         public void CompressFile(string dataFileName, string archiveName)
         {
             byte[] fileData = File.ReadAllBytes(dataFileName);
@@ -25,6 +30,12 @@ namespace LZWArchiver
             File.WriteAllBytes(archiveName, archiveData);
         }
 
+        /// <summary>
+        /// Decompresses the archive obtained using the LZW algorithm.
+        /// </summary>
+        /// <param name="archiveName">Path to the input file (archive).</param>
+        /// <param name="dataFileName">Path to the output file.</param>
+        /// <param name="text"></param>
         public void DecompressFile(string archiveName, string dataFileName, bool text = true)
         {
             byte[] archiveData = File.ReadAllBytes(archiveName);
@@ -144,7 +155,6 @@ namespace LZWArchiver
                         }
                     }
                 }
-
             }
 
             return decompressedBytes.ToArray();
@@ -230,4 +240,3 @@ namespace LZWArchiver
         }
     }
 }
-

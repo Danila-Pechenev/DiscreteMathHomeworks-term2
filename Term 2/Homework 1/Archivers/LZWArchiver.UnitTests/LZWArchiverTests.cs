@@ -23,7 +23,7 @@ namespace LZWArchiver.UnitTests
         }
 
         [Test]
-        public void VideoFileTest()
+        public void AudioFileTest()
         {
             LZWArchiver archiver = new LZWArchiver(16);
             archiver.CompressFile("../../../TestFiles/test3.mp3", "../../../TestResults/test3_16.mp3.lzw");
@@ -50,12 +50,24 @@ namespace LZWArchiver.UnitTests
         }
 
         [Test]
-        public void VideoFileWithOtherCompressionRatioTest()
+        public void AudioFileWithOtherCompressionRatioTest()
         {
             LZWArchiver archiver = new LZWArchiver(20);
             archiver.CompressFile("../../../TestFiles/test3.mp3", "../../../TestResults/test3_20.mp3.lzw");
             archiver.DecompressFile("../../../TestResults/test3_20.mp3.lzw", "../../../TestResults/test3_20_out.mp3", false);
             FileAssert.AreEqual("../../../TestFiles/test3.mp3", "../../../TestResults/test3_20_out.mp3");
+        }
+
+        [Test]
+        public void ImageFileManyCompressionRatioValuesTest()
+        {
+            for (int i = 12; i < 18; i++)
+            {
+                LZWArchiver archiver = new LZWArchiver(i);
+                archiver.CompressFile("../../../TestFiles/test2.bmp", $"../../../TestResults/test2_{i}.bmp.lzw");
+                archiver.DecompressFile($"../../../TestResults/test2_{i}.bmp.lzw", $"../../../TestResults/test2_{i}_out.bmp", false);
+                FileAssert.AreEqual("../../../TestFiles/test2.bmp", $"../../../TestResults/test2_{i}_out.bmp");
+            }
         }
     }
 }
