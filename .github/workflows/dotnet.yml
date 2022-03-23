@@ -4,7 +4,7 @@ on:
   push:
     branches: [ firstHW ]
   pull_request:
-    branches: [ firstHW ]
+    branches: [ main ]
 
 jobs:
   build:
