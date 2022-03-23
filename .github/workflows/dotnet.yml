@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ firstHW ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -24,4 +24,4 @@ jobs:
       run: nuget restore Term\ 2/Homework\ 1/Archivers/Archivers.sln
       
     - name: Build the Solution
-      run: msbuild Term 2/Homework 1/Archivers/Archivers.sln
+      run: msbuild Term\ 2/Homework\ 1/Archivers/Archivers.sln
