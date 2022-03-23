@@ -2,12 +2,12 @@ name: CI
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, firstHW ]
 
 jobs:
   build:
 
-    runs-on: [windows-latest]
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
