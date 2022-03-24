@@ -23,7 +23,7 @@ namespace HuffmanArchiver.UnitTests
         }
 
         [Test]
-        public void VideoFileTest()
+        public void AudioFileTest()
         {
             HuffmanArchiver archiver = new HuffmanArchiver();
             archiver.CompressFile("../../../TestFiles/test3.mp3", "../../../TestResults/test3.mp3.huffa");
