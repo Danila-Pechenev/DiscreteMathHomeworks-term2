@@ -1,44 +1,10 @@
-﻿using System.Text;
+﻿using Archiver;
 
 namespace HuffmanArchiver
 {
-    public class HuffmanArchiver
+    public class HuffmanArchiver : AGeneralArchiver
     {
-        /// <summary>
-        /// Compresses the file using the Huffman method.
-        /// </summary>
-        /// <param name="dataFileName">Path to the input file.</param>
-        /// <param name="archiveName">Path to the output file (archive).</param>
-        public void CompressFile(string dataFileName, string archiveName)
-        {
-            byte[] fileData = File.ReadAllBytes(dataFileName);
-            byte[] archiveData = CompressBytes(fileData);
-            File.WriteAllBytes(archiveName, archiveData);
-        }
-
-        /// <summary>
-        /// Decompresses the archive obtained using the Huffman method.
-        /// </summary>
-        /// <param name="archiveName">Path to the input file (archive).</param>
-        /// <param name="dataFileName">Path to the output file.</param>
-        /// <param name="text"></param>
-        public void DecompressFile(string archiveName, string dataFileName, bool text = true)
-        {
-            byte[] archiveData = File.ReadAllBytes(archiveName);
-            byte[] fileData = DecompressBytes(archiveData);
-            if (text)
-            {
-                Encoding encoder = Encoding.Default;
-                string result = encoder.GetString(fileData);
-                File.WriteAllText(dataFileName, result);
-            }
-            else
-            {
-                File.WriteAllBytes(dataFileName, fileData);
-            }
-        }
-
-        private byte[] DecompressBytes(byte[] archiveData)
+        protected override byte[] DecompressBytes(byte[] archiveData)
         {
             ParseHeader(archiveData, out int dataLength, out int startIndex, out byte[] frequenciesDict);
             Node root = CreateHuffmanTree(frequenciesDict);
@@ -89,7 +55,7 @@ namespace HuffmanArchiver
             startIndex = 4 + 256;
         }
 
-        private byte[] CompressBytes(byte[] fileData)
+        protected override byte[] CompressBytes(byte[] fileData)
         {
             byte[] frequenciesDict = CalculateFrequencies(fileData);
             byte[] header = CreateHeader(fileData.Length, frequenciesDict);

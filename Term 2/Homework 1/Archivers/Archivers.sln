@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuffmanArchiver", "HuffmanArchiver\HuffmanArchiver.csproj", "{8CDF7B23-6F21-4855-B62F-CAFF38725F77}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZWArchiver", "LZWArchiver\LZWArchiver.csproj", "{CCDBF626-6527-46C0-8627-472747FDC466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuffmanArchiver.UnitTests", "HuffmanArchiver.UnitTests\HuffmanArchiver.UnitTests.csproj", "{693C3BDF-7A1F-494E-85B5-14984EF22D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuffmanArchiver.UnitTests", "HuffmanArchiver.UnitTests\HuffmanArchiver.UnitTests.csproj", "{693C3BDF-7A1F-494E-85B5-14984EF22D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZWArchiver.UnitTests", "LZWArchiver.UnitTests\LZWArchiver.UnitTests.csproj", "{EDC8FCC0-95EB-4F6B-8D63-B59A6A354B61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZWArchiver.UnitTests", "LZWArchiver.UnitTests\LZWArchiver.UnitTests.csproj", "{EDC8FCC0-95EB-4F6B-8D63-B59A6A354B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archiver", "Archiver\Archiver.csproj", "{D7A67B5F-E6B5-4F44-B9CC-4DAE0E29DF0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EDC8FCC0-95EB-4F6B-8D63-B59A6A354B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDC8FCC0-95EB-4F6B-8D63-B59A6A354B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDC8FCC0-95EB-4F6B-8D63-B59A6A354B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A67B5F-E6B5-4F44-B9CC-4DAE0E29DF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A67B5F-E6B5-4F44-B9CC-4DAE0E29DF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A67B5F-E6B5-4F44-B9CC-4DAE0E29DF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A67B5F-E6B5-4F44-B9CC-4DAE0E29DF0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
