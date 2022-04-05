@@ -2,7 +2,7 @@
 
 public static class Kruskal
 {
-    static List<Edge> FindMinSpanningTree(List<Edge> edges, int vertexCount)
+    public static List<Edge> FindMinSpanningTree(List<Edge> edges, int vertexCount)
     {
         edges.Sort((edge1, edge2) => edge1.Length.CompareTo(edge2.Length));
         var DSU = new DisjointSetUnion(vertexCount);
@@ -11,7 +11,7 @@ public static class Kruskal
         for (int i = 0; i < edges.Count; i++)
         {
             Edge edge = edges[i];
-            if (DSU.FindSet(edge.FirstVertex) == DSU.FindSet(edge.FirstVertex))
+            if (DSU.FindSet(edge.FirstVertex) == DSU.FindSet(edge.SecondVertex))
             {
                 continue;
             }
