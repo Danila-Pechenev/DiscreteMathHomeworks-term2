@@ -28,6 +28,4 @@ public class DSUTests
             Assert.AreEqual(dsu.FindSet(i), dsu.FindSet(i + 1));
         }
     }
-
-
 }
