@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ FirstHW ]
+    branches: [ SecondHW ]
   pull_request:
     branches: [ main ]
 
@@ -21,10 +21,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
       
     - name: Restore NuGet packages
-      run: nuget restore "Term 2/Homework 1/Archivers/Archivers.sln"
+      run: nuget restore "Term 2/Homework 2/Algorithms.sln"
       
     - name: Build the Solution
-      run: msbuild "Term 2/Homework 1/Archivers/Archivers.sln"
+      run: msbuild "Term 2/Homework 2/Algorithms.sln"
       
     - name: Testing
-      run: dotnet test "Term 2/Homework 1/Archivers/Archivers.sln"
+      run: dotnet test "Term 2/Homework 2/Algorithms.sln"
