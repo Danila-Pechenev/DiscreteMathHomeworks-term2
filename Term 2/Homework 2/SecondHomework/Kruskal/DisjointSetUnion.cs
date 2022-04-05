@@ -30,7 +30,7 @@ public class DisjointSetUnion
 
         if (set1 != set2)
         {
-            parent[vertex1] = set1;
+            parent[set2] = set1;
         }
     }
 }
