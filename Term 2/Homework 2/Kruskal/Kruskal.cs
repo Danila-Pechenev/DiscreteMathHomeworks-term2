@@ -10,7 +10,7 @@ public static class Kruskal
 
         for (int i = 0; i < edges.Count; i++)
         {
-            Edge edge = edges[i];
+            var edge = edges[i];
             if (DSU.FindSet(edge.FirstVertex) == DSU.FindSet(edge.SecondVertex))
             {
                 continue;
