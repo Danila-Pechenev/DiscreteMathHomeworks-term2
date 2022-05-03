@@ -2,9 +2,9 @@
 
 public static class GraphRepresentation
 {
-    public static int[,] EdgeListToAdjacencyMatrix(List<Edge> edgeList)
+    public static int[,] EdgeListToAdjacencyMatrix(List<Edge> edgeList, int vertexCount)
     {
-        int[,] matrix = new int[edgeList.Count, edgeList.Count];
+        int[,] matrix = new int[vertexCount, vertexCount];
         foreach (var edge in edgeList)
         {
             matrix[edge.FirstVertex, edge.SecondVertex] = edge.Length;
@@ -21,7 +21,10 @@ public static class GraphRepresentation
         {
             for (int j = i + 1; j < matrix.GetLength(0); j++)
             {
-                edgeList.Add(new Edge(i, j, matrix[i, j]));
+                if (matrix[i, j] != 0)
+                {
+                    edgeList.Add(new Edge(i, j, matrix[i, j]));
+                }
             }
         }
 
