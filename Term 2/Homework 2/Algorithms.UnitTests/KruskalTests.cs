@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
+namespace Algorithms.UnitTests;
+using NUnit.Framework;
 using System.Collections.Generic;
-
-namespace Kruskal.UnitTests;
+using CommonClasses;
+using Algoritms;
 
 public class KruskalTests
 {

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kruskal\Kruskal.csproj" />
+    <ProjectReference Include="..\CommonClasses\CommonClasses.csproj" />
   </ItemGroup>
 
 </Project>

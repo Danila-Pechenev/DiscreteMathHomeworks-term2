@@ -1,6 +1,6 @@
+﻿namespace CommonClasses.UnitTests;
 using NUnit.Framework;
-
-namespace Kruskal.UnitTests;
+using CommonClasses;
 
 public class EdgeTests
 {

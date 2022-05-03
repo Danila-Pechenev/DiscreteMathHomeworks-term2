@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
-
-namespace Kruskal.UnitTests;
+namespace CommonClasses.UnitTests;
+using NUnit.Framework;
+using CommonClasses;
 
 public class DSUTests
 {

@@ -1,4 +1,4 @@
-﻿namespace Kruskal;
+﻿namespace CommonClasses;
 
 public class DisjointSetUnion
 {
