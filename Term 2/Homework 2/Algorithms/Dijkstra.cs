@@ -33,9 +33,9 @@ public static class Dijkstra
             }
 
             minDistance = INF;
-            for (int j = 0; i < N; j++)
+            for (int j = 0; j < N; j++)
             {
-                if (!used[j] && distances[j] < minDistance)
+                if (!used[j] && (distances[j] < minDistance))
                 {
                     minDistance = distances[j];
                     minVertex = j;
