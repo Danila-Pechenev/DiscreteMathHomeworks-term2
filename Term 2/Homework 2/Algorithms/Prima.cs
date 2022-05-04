@@ -3,7 +3,7 @@ using CommonClasses;
 
 public static class Prima
 {
-    public static List<Edge> FindMinSpanningTree(int[,] matrix)
+    public static List<Edge>? FindMinSpanningTree(int[,] matrix)
     {
         var minSpanningTree = new List<Edge>();
         
@@ -28,6 +28,11 @@ public static class Prima
                     minDistance = distances[j];
                     currentVertex = j;
                 }
+            }
+
+            if (minDistance == INF)
+            {
+                return null;
             }
 
             used[currentVertex] = true;

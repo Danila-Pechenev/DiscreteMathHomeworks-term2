@@ -3,7 +3,7 @@ using CommonClasses;
 
 public static class Kruskal
 {
-    public static List<Edge> FindMinSpanningTree(List<Edge> edges, int vertexCount)
+    public static List<Edge>? FindMinSpanningTree(List<Edge> edges, int vertexCount)
     {
         edges.Sort((edge1, edge2) => edge1.Length.CompareTo(edge2.Length));
         var DSU = new DisjointSetUnion(vertexCount);
@@ -21,6 +21,11 @@ public static class Kruskal
                 minSpanningTree.Add(edge);
                 DSU.UnionSets(edge.FirstVertex, edge.SecondVertex);
             }
+        }
+
+        if (minSpanningTree.Count != vertexCount - 1)
+        {
+            return null;
         }
         
         return minSpanningTree;

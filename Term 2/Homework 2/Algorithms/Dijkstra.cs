@@ -3,7 +3,7 @@ using CommonClasses;
 
 public static class Dijkstra
 {
-    public static List<Edge> FindMinPath(int[,] matrix, int startVertex, int endVertex)
+    public static List<Edge>? FindMinPath(int[,] matrix, int startVertex, int endVertex)
     {
         var path = new List<Edge>();
 
@@ -40,6 +40,11 @@ public static class Dijkstra
                     minDistance = distances[j];
                     minVertex = j;
                 }
+            }
+
+            if (minDistance == INF)
+            {
+                return null;
             }
         }
 
