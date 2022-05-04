@@ -48,11 +48,4 @@ public static class Prima
 
         return minSpanningTree;
     }
-
-    public static List<Edge> FindMinSpanningTree(List<Edge> edges, int vertexCount)
-    {
-        var matrix = GraphRepresentation.EdgeListToAdjacencyMatrix(edges, vertexCount);
-
-        return FindMinSpanningTree(matrix);
-    }
 }

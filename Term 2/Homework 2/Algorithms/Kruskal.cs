@@ -25,12 +25,4 @@ public static class Kruskal
         
         return minSpanningTree;
     }
-
-    public static List<Edge> FindMinSpanningTree(int[,] matrix)
-    {
-        var edges = GraphRepresentation.AdjacencyMatrixToEdgeList(matrix);
-        int vertexCount = matrix.Length;
-
-        return FindMinSpanningTree(edges, vertexCount);
-    }
 }

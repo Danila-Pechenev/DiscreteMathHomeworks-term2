@@ -54,11 +54,4 @@ public static class Dijkstra
 
         return path;
     }
-
-    public static List<Edge> FindMinPath(List<Edge> edges, int vertexCount, int startVertex, int endVertex)
-    {
-        var matrix = GraphRepresentation.EdgeListToAdjacencyMatrix(edges, vertexCount);
-
-        return FindMinPath(matrix, startVertex, endVertex);
-    }
 }
