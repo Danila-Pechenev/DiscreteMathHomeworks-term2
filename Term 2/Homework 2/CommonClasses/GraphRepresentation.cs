@@ -30,4 +30,33 @@ public static class GraphRepresentation
 
         return edgeList;
     }
+
+    public static Dictionary<int, int>[] EdgeListToAdjacencyList(List<Edge> edgeList, int vertexCount)
+    {
+        var adjacencyList = new Dictionary<int, int>[vertexCount];
+        foreach (var edge in edgeList)
+        {
+            adjacencyList[edge.FirstVertex].Add(edge.SecondVertex, edge.Length);
+            adjacencyList[edge.SecondVertex].Add(edge.FirstVertex, edge.Length);
+        }
+
+        return adjacencyList;
+    }
+
+    public static List<Edge> AdjacencyListToEdgeList(Dictionary<int, int>[] adjacencyList)
+    {
+        var edgeList = new List<Edge>();
+        for (int i = 0; i < adjacencyList.Length; i++)
+        {
+            foreach (var edge in adjacencyList[i])
+            {
+                if (edge.Key < i)
+                {
+                    edgeList.Add(new Edge(i, edge.Key, edge.Value));
+                }
+            }
+        }
+
+        return edgeList;
+    }
 }
