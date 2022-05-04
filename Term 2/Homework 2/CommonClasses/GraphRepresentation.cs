@@ -34,6 +34,11 @@ public static class GraphRepresentation
     public static Dictionary<int, int>[] EdgeListToAdjacencyList(List<Edge> edgeList, int vertexCount)
     {
         var adjacencyList = new Dictionary<int, int>[vertexCount];
+        for (int i = 0; i < adjacencyList.Length; i++)
+        {
+            adjacencyList[i] = new Dictionary<int, int>();
+        }
+
         foreach (var edge in edgeList)
         {
             adjacencyList[edge.FirstVertex].Add(edge.SecondVertex, edge.Length);
