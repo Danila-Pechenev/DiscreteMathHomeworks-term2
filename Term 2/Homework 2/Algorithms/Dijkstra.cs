@@ -10,10 +10,17 @@ public static class Dijkstra
         int N = matrix.GetLength(0);
         int INF = (int)Math.Pow(10, 9);
         var distances = new int[N];
-        var parents = new int[N];
-        for (int i = 1; i < N; i++)
+        for (int i = 0; i < N; i++)
         {
             distances[i] = INF;
+        }
+
+        distances[startVertex] = 0;
+
+        var parents = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            parents[i] = -1;
         }
 
         var used = new bool[N];
@@ -41,18 +48,18 @@ public static class Dijkstra
                     minVertex = j;
                 }
             }
-
-            if (minDistance == INF)
-            {
-                return null;
-            }
         }
 
         int currentVertex = endVertex;
-        while (currentVertex != startVertex)
+        while (parents[currentVertex] != -1)
         {
             path.Add(new Edge(currentVertex, parents[currentVertex], matrix[currentVertex, parents[currentVertex]]));
             currentVertex = parents[currentVertex];
+        }
+
+        if (currentVertex != startVertex)
+        {
+            return null;
         }
 
         path.Reverse();
