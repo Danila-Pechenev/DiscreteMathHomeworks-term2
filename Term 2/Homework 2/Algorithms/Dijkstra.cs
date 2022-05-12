@@ -8,7 +8,7 @@ public static class Dijkstra
         var path = new List<Edge>();
 
         int N = matrix.GetLength(0);
-        int INF = (int)Math.Pow(10, 9);
+        int INF = Int32.MaxValue;
         var distances = new int[N];
         for (int i = 0; i < N; i++)
         {

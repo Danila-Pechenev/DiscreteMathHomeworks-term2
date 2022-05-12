@@ -8,7 +8,7 @@ public static class EffectivePrima
         var minSpanningTree = new List<Edge>();
 
         int N = adjacencyList.Length;
-        int INF = (int)Math.Pow(10, 9);
+        int INF = Int32.MaxValue;
         var distances = new int[N];
         var edgeEnds = new int[N];
         var used = new bool[N];
