@@ -5,7 +5,7 @@ public class FordFulkerson
     public static Dictionary<int, int>[] FindMaxFlowGraph(Dictionary<int, int>[] capacityAdjacencyList, int source, int sink)
     {
         int N = capacityAdjacencyList.Length;
-        int INF = (int)1e9;
+        int INF = Int32.MaxValue;
 
         for (int i = 0; i < N; i++)
         {

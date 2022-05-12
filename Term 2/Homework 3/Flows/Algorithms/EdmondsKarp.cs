@@ -77,7 +77,7 @@ public class EdmondsKarp
                 }
             }
 
-            int MinC = (int)1e9;
+            int MinC = Int32.MaxValue;
             int currentVertex = sink;
             while (parents[currentVertex] != -1)
             {
@@ -85,7 +85,7 @@ public class EdmondsKarp
                 currentVertex = parents[currentVertex];
             }
 
-            if (MinC == (int)1e9)
+            if (MinC == Int32.MaxValue)
             {
                 MinC = 0;
             }
