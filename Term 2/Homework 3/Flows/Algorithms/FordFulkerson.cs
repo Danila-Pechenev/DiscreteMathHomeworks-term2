@@ -24,10 +24,16 @@ public class FordFulkerson
                 maxFlowGraph[i].TryAdd(edge.Key, 0);
             }
         }
-  
+
+        var visited = new bool[N];
         int delta = dfs(source, INF);
         while (delta != 0)
         {
+            for (int i = 0; i < N; i++)
+            {
+                visited[i] = false;
+            }
+
             delta = dfs(source, INF);
         }
 
@@ -46,8 +52,6 @@ public class FordFulkerson
 
         int dfs(int currentVertex, int MinC)
         {
-            var visited = new bool[N];
-
             if (currentVertex == sink)
             {
                 return MinC;
